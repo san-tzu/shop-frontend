@@ -1,8 +1,10 @@
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import TopNavbar from "./components/TopNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Cake Shop",
@@ -11,8 +13,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang='en' className='light'>
-            <body className={inter.className}>
+        <html lang='en' className='light overflow-x-hidden overflow-auto'>
+            <body className={montserrat.className}>
+                <TopNavbar />
                 <ThemeProvider>{children}</ThemeProvider>
             </body>
         </html>
