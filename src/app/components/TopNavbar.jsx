@@ -12,6 +12,9 @@ import {
 } from "@nextui-org/navbar";
 import Link from "next/link";
 
+import logo from '../../../public/images/truwex_logo.png'
+import Image from "next/image";
+
 export default function TopNavbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -29,31 +32,31 @@ export default function TopNavbar() {
     ];
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="full" height='full' className="px-2 bg-rose-100">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className='sm:hidden'
                 />
                 <NavbarBrand>
-                    <p className='font-bold text-inherit'>ACME</p>
+                    <Image src={logo} alt="logo" width={150} className="object-contain" />
                 </NavbarBrand>
             </NavbarContent>
 
-            <NavbarContent className='hidden sm:flex gap-4' justify='center' content="center">
+            <NavbarContent className='hidden sm:flex gap-4'>
                 <NavbarItem>
-                    <Link color='foreground' href='#'>
-                        Features
+                    <Link className="hover:text-rose-500 text-xl" href='/'>
+                        Home
                     </Link>
                 </NavbarItem>
                 <NavbarItem isActive>
-                    <Link href='#' aria-current='page'>
-                        Customers
+                    <Link className="text-rose-500 hover:text-rose-500 text-xl" href='/shop' aria-current='page'>
+                        Shop
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color='foreground' href='#'>
-                        Integrations
+                    <Link className="hover:text-rose-500 text-xl" href='/about'>
+                        About Us
                     </Link>
                 </NavbarItem>
             </NavbarContent>
