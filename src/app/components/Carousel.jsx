@@ -8,7 +8,8 @@ import cake2 from "../../../public/images/cake2.jpg";
 import cake3 from "../../../public/images/cake3.jpg";
 import cake4 from "../../../public/images/cake4.jpg";
 import cake5 from "../../../public/images/cake5.jpg";
-import cake6 from "../../../public/images/cake5.jpg";
+import cake6 from "../../../public/images/cake6.jpg";
+import cake7 from "../../../public/images/cake7.jpg";
 const CarouselData = [
     {
         image: cake1,
@@ -34,6 +35,10 @@ const CarouselData = [
         image: cake6,
         heading: "Blueteck Computers",
     },
+    {
+        image: cake7,
+        heading: "Blueteck Computers",
+    },
 ];
 
 const slidesCount = CarouselData.length - 1;
@@ -50,7 +55,7 @@ const Carousel = () => {
 
     return (
         <div className='w-screen'>
-            <div className='w-full h-unit-9xl relative flex overflow-hidden'>
+            <div className='w-full h-unit-8xl relative flex overflow-hidden'>
                 {CarouselData.map((slide, index) => (
                     <div
                         key={index}
@@ -67,7 +72,7 @@ const Carousel = () => {
                                     quality={100}
                                     fill
                                     sizes='50vw'
-                                    className='-z-10 object-contain'
+                                    className='-z-10 object-cover rounded-lg shadow-lg'
                                 />
                                 {/* <div className='w-full'>
                                     <h1 className='font-bold text-4xl pb-4 text-blue-600'>
